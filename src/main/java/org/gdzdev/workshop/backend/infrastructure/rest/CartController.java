@@ -15,14 +15,12 @@ public class CartController {
 
     private final CartService useCase;
 
-    // ✅
     @GetMapping("/active")
     public ResponseEntity<ApiResponse<?>> getActiveCart() {
         return ResponseEntity.ok(ApiResponse.builder()
                 .response(this.useCase.getActiveCart()).status("success").build());
     }
 
-    // ✅
     @PostMapping
     public ResponseEntity<ApiResponse<?>> createCart() {
         return ResponseEntity.status(HttpStatus.CREATED).body(ApiResponse.builder()
@@ -60,7 +58,7 @@ public class CartController {
                 .response(this.useCase.decreaseItemQuantity(itemId)).status("success").build());
     }
 
-    @DeleteMapping("/active")
+    @DeleteMapping("/empty-cart")
     public ResponseEntity<ApiResponse<?>> emptyCart() {
         return ResponseEntity.ok(ApiResponse.builder()
                 .response(this.useCase.emptyCart()).status("success").build());

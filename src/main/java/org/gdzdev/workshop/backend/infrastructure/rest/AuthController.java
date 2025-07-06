@@ -41,7 +41,7 @@ public class AuthController {
                 .status(HttpStatus.ACCEPTED)
                 .body(ApiResponse
                         .builder()
-                        .response(this._authService.signing(data, authUser))
+                        .response(this._authService.signin(data, authUser))
                         .status("success")
                         .build()
                 );

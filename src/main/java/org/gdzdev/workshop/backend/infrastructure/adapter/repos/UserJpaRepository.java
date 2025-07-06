@@ -1,6 +1,5 @@
 package org.gdzdev.workshop.backend.infrastructure.adapter.repos;
 
-import org.gdzdev.workshop.backend.domain.enums.UserRole;
 import org.gdzdev.workshop.backend.infrastructure.adapter.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;

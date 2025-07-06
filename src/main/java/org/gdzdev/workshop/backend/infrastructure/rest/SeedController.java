@@ -14,23 +14,25 @@ import org.springframework.web.bind.annotation.*;
 public class SeedController {
     private final SeedServiceImpl _seederUseCase;
 
-    @GetMapping("/seedAll")
+    @PutMapping("/seedAll")
     public ResponseEntity<ApiResponse<?>> seedAll() {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(ApiResponse
                         .builder()
+                        .status("success")
                         .response(this._seederUseCase.seedALl())
                         .build()
                 );
     }
 
-    @GetMapping("/isSeeded")
+    @PutMapping("/isSeeded")
     public ResponseEntity<ApiResponse<?>> isSeeded() {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(ApiResponse
                         .builder()
+                        .status("success")
                         .response("Is seeded 😊")
                         .build()
                 );

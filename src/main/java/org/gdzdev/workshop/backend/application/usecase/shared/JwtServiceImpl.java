@@ -20,7 +20,7 @@ public class JwtServiceImpl {
 
     public String generateAccessToken(UserEntity user) {
         try {
-            Algorithm algorithm = Algorithm.HMAC256(JWT_SECRET);
+            Algorithm algorithm = Algorithm.HMAC256(this.JWT_SECRET);
             return JWT.create()
                     .withSubject(user.getUsername())
                     .withClaim("username", user.getUsername())
@@ -33,7 +33,8 @@ public class JwtServiceImpl {
 
     public String validateToken(String token) {
         try {
-            Algorithm algorithm = Algorithm.HMAC256(JWT_SECRET);
+            Algorithm algorithm = Algorithm.HMAC256(this.JWT_SECRET);
+
             return JWT.require(algorithm)
                     .build()
                     .verify(token)
