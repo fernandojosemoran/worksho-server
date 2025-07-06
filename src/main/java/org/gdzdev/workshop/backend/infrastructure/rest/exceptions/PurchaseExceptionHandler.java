@@ -29,6 +29,4 @@ public class PurchaseExceptionHandler {
                 HttpStatus.NOT_FOUND
         );
     }
-
-
 }

@@ -6,14 +6,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.gdzdev.workshop.backend.application.usecase.shared.JwtServiceImpl;
+import org.gdzdev.workshop.backend.domain.exception.PurchaseNotFoundException;
+import org.gdzdev.workshop.backend.domain.exception.user.UserNotFoundException;
 import org.gdzdev.workshop.backend.infrastructure.adapter.repos.UserJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor

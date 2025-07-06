@@ -33,7 +33,7 @@ public class AuthServiceImpl implements UserDetailsService {
     }
 
 
-    public JwtDto signing(SigninDto data, Authentication authUser) {
+    public JwtDto signin(SigninDto data, Authentication authUser) {
         var accessToken = this._jwtService.generateAccessToken((UserEntity) authUser.getPrincipal());
 
         return new JwtDto(accessToken);
